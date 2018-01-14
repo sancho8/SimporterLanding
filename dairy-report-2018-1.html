@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://f5cad4y6.dotests.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://js-agent.newrelic.com/nr-1071.min.js"></script>
+    <script type="text/javascript" async="" src="./f5cad4y6.dotests.com_files/recaptcha__ru.js.Без названия"></script>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {}), __nr_require = function(e, t, n) {
+            function r(n) {
+                if (!t[n]) {
+                    var o = t[n] = {
+                        exports: {}
+                    };
+                    e[n][0].call(o.exports, function(t) {
+                        var o = e[n][1][t];
+                        return r(o || t)
+                    }, o, o.exports)
+                }
+                return t[n].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var o = 0; o < n.length; o++) r(n[o]);
+            return r
+        }({
+            1: [function(e, t, n) {
+                function r() {}
+
+                function o(e, t, n) {
+                    return function() {
+                        return i(e, [f.now()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this
+                    }
+                }
+                var i = e("handle"),
+                    a = e(2),
+                    u = e(3),
+                    c = e("ee").get("tracer"),
+                    f = e("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                    d = "api-",
+                    l = d + "ixn-";
+                a(p, function(e, t) {
+                    s[t] = o(d + t, !0, "api")
+                }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), t.exports = newrelic, s.interaction = function() {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function(e, t) {
+                        var n = {},
+                            r = this,
+                            o = "function" == typeof t;
+                        return i(l + "tracer", [f.now(), e, n], r),
+                            function() {
+                                if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+                                    return t.apply(this, arguments)
+                                } catch (e) {
+                                    throw c.emit("fn-err", [arguments, this, e], n), e
+                                } finally {
+                                    c.emit("fn-end", [f.now()], n)
+                                }
+                            }
+                    }
+                };
+                a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, t) {
+                    m[t] = o(l + t)
+                }), newrelic.noticeError = function(e) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, f.now()])
+                }
+            }, {}],
+            2: [function(e, t, n) {
+                function r(e, t) {
+                    var n = [],
+                        r = "",
+                        i = 0;
+                    for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1);
+                    return n
+                }
+                var o = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            3: [function(e, t, n) {
+                function r(e, t, n) {
+                    t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+                    for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+                    return i
+                }
+                t.exports = r
+            }, {}],
+            4: [function(e, t, n) {
+                t.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function(e, t, n) {
+                function r() {}
+
+                function o(e) {
+                    function t(e) {
+                        return e && e instanceof r ? e : e ? c(e, u, i) : i()
+                    }
+
+                    function n(n, r, o, i) {
+                        if (!d.aborted || i) {
+                            e && e(n, r, o);
+                            for (var a = t(o), u = m(n), c = u.length, f = 0; f < c; f++) u[f].apply(a, r);
+                            var p = s[y[n]];
+                            return p && p.push([b, n, r, a]), a
+                        }
+                    }
+
+                    function l(e, t) {
+                        v[e] = m(e).concat(t)
+                    }
+
+                    function m(e) {
+                        return v[e] || []
+                    }
+
+                    function w(e) {
+                        return p[e] = p[e] || o(n)
+                    }
+
+                    function g(e, t) {
+                        f(e, function(e, n) {
+                            t = t || "feature", y[n] = t, t in s || (s[t] = [])
+                        })
+                    }
+                    var v = {},
+                        y = {},
+                        b = {
+                            on: l,
+                            emit: n,
+                            get: w,
+                            listeners: m,
+                            context: t,
+                            buffer: g,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function i() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+                }
+                var u = "nr@context",
+                    c = e("gos"),
+                    f = e(2),
+                    s = {},
+                    p = {},
+                    d = t.exports = o();
+                d.backlog = s
+            }, {}],
+            gos: [function(e, t, n) {
+                function r(e, t, n) {
+                    if (o.call(e, t)) return e[t];
+                    var r = n();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, t, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (i) {}
+                    return e[t] = r, r
+                }
+                var o = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            handle: [function(e, t, n) {
+                function r(e, t, n, r) {
+                    o.buffer([e], r), o.emit(e, t, n)
+                }
+                var o = e("ee").get("handle");
+                t.exports = r, r.ee = o
+            }, {}],
+            id: [function(e, t, n) {
+                function r(e) {
+                    var t = typeof e;
+                    return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function() {
+                        return o++
+                    })
+                }
+                var o = 1,
+                    i = "nr@id",
+                    a = e("gos");
+                t.exports = r
+            }, {}],
+            loader: [function(e, t, n) {
+                function r() {
+                    if (!x++) {
+                        var e = h.info = NREUM.info,
+                            t = d.getElementsByTagName("script")[0];
+                        if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return s.abort();
+                        f(y, function(t, n) {
+                            e[t] || (e[t] = n)
+                        }), c("mark", ["onload", a() + h.offset], null, "api");
+                        var n = d.createElement("script");
+                        n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t)
+                    }
+                }
+
+                function o() {
+                    "complete" === d.readyState && i()
+                }
+
+                function i() {
+                    c("mark", ["domContent", a() + h.offset], null, "api")
+                }
+
+                function a() {
+                    return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - h.offset
+                }
+                var u = (new Date).getTime(),
+                    c = e("handle"),
+                    f = e(2),
+                    s = e("ee"),
+                    p = window,
+                    d = p.document,
+                    l = "addEventListener",
+                    m = "attachEvent",
+                    w = p.XMLHttpRequest,
+                    g = w && w.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: p.setImmediate,
+                    CT: clearTimeout,
+                    XHR: w,
+                    REQ: p.Request,
+                    EV: p.Event,
+                    PR: p.Promise,
+                    MO: p.MutationObserver
+                };
+                var v = "" + location,
+                    y = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+                    h = t.exports = {
+                        offset: u,
+                        now: a,
+                        origin: v,
+                        features: {},
+                        xhrWrappable: b
+                    };
+                e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m]("onload", r)), c("mark", ["firstbyte", u], null, "api");
+                var x = 0,
+                    E = e(4)
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <link rel="shortcut icon" href="http://f5cad4y6.dotests.com/" type="image/x-icon">
+    <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link href="http://f5cad4y6.dotests.com/" type="text/css" rel="stylesheet">
+    <link href="./f5cad4y6.dotests.com_files/css" type="text/css" rel="stylesheet">
+    <!--[if lt IE 9]><link href="https://old.assets-landingi.com/bootstrap/css/ie8-grid.css?v=8.9.8" type="text/css" rel="stylesheet"><link href="https://styles.assets-landingi.com/PVC4n2OY/base_ie8.css" type="text/css" rel="stylesheet"><![endif]-->
+    <link href="./f5cad4y6.dotests.com_files/2.3-landend-base.css" type="text/css" rel="stylesheet">
+    <link href="./f5cad4y6.dotests.com_files/base.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        .backpack.dropzone {
+            font-family: 'SF UI Display', 'Segoe UI';
+            font-size: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 150px;
+            font-weight: lighter;
+            color: white;
+            will-change: right;
+            z-index: 2147483647;
+            bottom: 20%;
+            background: #333;
+            position: fixed;
+            user-select: none;
+            transition: left .5s, right .5s;
+            right: 0px;
+        }
+
+        .modal-content{
+            background: #028c7f;
+            font-size: 24px;
+            text-align: center;
+            color: white;
+        }
+
+        .modal-footer{
+            background-color: #028c7f;
+        }
+        
+        .modal-footer button{
+            background-color: #fd909b;
+            border-radius: 15px;
+            padding: 10px 40px;
+            margin: auto;
+            color: white;
+            border: none;
+            font-family: "open sans";
+            font-style: bold;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .modal-footer > div{
+            margin: auto;
+        }
+        .backpack.dropzone .animation {
+            height: 80px;
+            width: 250px;
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center;
+        }
+        
+        .backpack.dropzone .title::before {
+            content: 'Save to';
+        }
+        
+        .backpack.dropzone.closed {
+            right: -250px;
+        }
+        
+        .backpack.dropzone.hover .animation {
+            animation: sxt-play-anim-hover 0.91s steps(21);
+            animation-fill-mode: forwards;
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center;
+        }
+        
+        @keyframes sxt-play-anim-hover {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -5250px;
+            }
+        }
+        
+        .backpack.dropzone.saving .title::before {
+            content: 'Saving to';
+        }
+        
+        .backpack.dropzone.saving .animation {
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+            animation: sxt-play-anim-saving steps(59) 2.46s infinite;
+        }
+        
+        @keyframes sxt-play-anim-saving {
+            100% {
+                background-position: -14750px;
+            }
+        }
+        
+        .backpack.dropzone.saved .title::before {
+            content: 'Saved to';
+        }
+        
+        .backpack.dropzone.saved .animation {
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+            animation: sxt-play-anim-saved steps(20) 0.83s forwards;
+        }
+        
+        @keyframes sxt-play-anim-saved {
+            100% {
+                background-position: -5000px;
+            }
+        }
+    </style>
+    <style id="style-1-cropbar-clipper">
+        /* Copyright 2014 Evernote Corporation. All rights reserved. */
+        
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255, 255, 255, .38) solid !important;
+            border-radius: 4px !important;
+        }
+        
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
+</head>
+
+<body id="SDSZGaTWMfRxDUPy3d86pu20s1Id0TE4">
+    <div id="F6U27W1ar1nebyJmlLhrS3XroH0OcktM" class="widget widget-section">
+        <div class="row">
+            <div class="container">
+                <div id="rb0a3nhUGNvzfFr65BJOpVrwN5WypyDS" class="widget widget-text">
+                    <p></p>
+                    <p><span style="color: rgb(255, 255, 255);">2018 Consumers in the Dairy Aisle</span></p>
+                    <p></p>
+                </div>
+                <div id="gKJTMI2Nf3Qt7Jp42CGkztq8TTw86zPl" class="widget widget-text">
+                    <p></p>
+                    <p><font color="#ffffff">Battle for Greek Yogurt brand leadership.</font></p>
+                    <p></p>
+                </div>
+                <div id="XyVLm52w6uWGxHhB65nz4g12AkoHkrMp" class="widget widget-text">
+                    <ul>
+                        <li><font color="#ffffff">Yoplait</font></li>
+                        <li><font color="#ffffff">Dannon</font></li>
+                        <li><font color="#ffffff">Oikos</font></li>
+                        <li><font color="#ffffff">Stonyfield</font></li>
+                        <li><font color="#ffffff">Greek Gods</font></li>
+                        <li><font color="#ffffff">Chobani</font></li>
+                    </ul>
+                </div>
+                <div id="N20Mnfh3Eioo0mEOOwBGwhM3RRSsx5Qn" class="widget widget-box"></div>
+                <div id="MNOyvsW9hIaEr5u54BCtQdIiVodZ7FPI" class="widget widget-box"></div>
+                <div id="RKZDmXLBCwbD9EGPqteoGTvxBQQICspb" class="widget widget-text">
+                    <p><b>Get a free sample of the report</b></p>
+                </div>
+                <div id="ZsFwtk6Gn15Fy9hFeckEcOoJIwDSsyk3" class="widget widget-box"></div>
+                <form id="rQTX9i39EtgStFb9QWPgm11Cucy3TFTT" class="widget widget-form" data-orientation="vertical" data-version="2.1" enctype="multipart/form-data" method="post" novalidate="" data-hash="HCgQ95aft6fbfQi57Lyd">
+                    <div id="CbH5h9BHHvdpITl9wqfr1PwJ3IDOIAGy" class="widget widget-container clearfix">
+                        <label id="ZfVNWSoy4rTxOZWa1U8cr6cXVwOx4JP1" class="widget widget-text widget-regular-label widget-label"></label>
+                        <input class="widget widget-input-text" id="Vv2anCkyvUtG9sG6NtCU0Gd28I4VGVxI" type="text" subtype="name" placeholder="Name" parentid="rQTX9i39EtgStFb9QWPgm11Cucy3TFTT" name="name" value="">
+                    </div>
+                    <div id="uit2HQCdiLgqwICGcSp2BQJr9mg9ugL7" class="widget widget-container clearfix">
+                        <label id="QvOhoHdZAkFcpWTDJMUEB2H1nBKhONUC" class="widget widget-text widget-regular-label widget-label"></label>
+                        <input class="widget widget-input-text" id="I3t0V2J7N4OHWSXATv0E6fVfTfN0DAgg" type="email" subtype="email" parentid="rQTX9i39EtgStFb9QWPgm11Cucy3TFTT" placeholder="Email" name="email" value="">
+                    </div>
+                    <div id="XlLnMtE4VdIcEJWABnamG4UShgvnHuTl" class="widget widget-container clearfix">
+                        <script src="./f5cad4y6.dotests.com_files/api.js.Без названия"></script>
+                        <div class="g-recaptcha" data-sitekey=""></div>
+                        <style>
+                            .g-recaptcha {
+                                transform: scale(0.93);
+                                transform-origin: 0 0;
+                            }
+                        </style>
+                    </div>
+                    <div id="F02QoIyurFSsiGeOoW7dZr92xApafbD8" class="widget widget-container input-button-container clearfix">
+                        <button class="widget widget-input-button" type="submit" onclick="sendEmail()" id="ndZ5qzK6V3st0laJXIa2pWFNpdhMJgUC" parentid="rQTX9i39EtgStFb9QWPgm11Cucy3TFTT">
+                            <div class="widget-overlay"></div>SUBMIT</button>
+                    </div>
+                    <input type="hidden" id="" name="_name_" value="">
+                    <input type="hidden" name="_uid" value="rQTX9i39EtgStFb9QWPgm11Cucy3TFTT">
+                    <input type="hidden" name="_redirect" value="">
+                </form>
+                <div id="Vr0mECuAp59hiZipM4DLENoNEy6ZaSN4" class="widget widget-text">
+                    <p></p>
+                    <p><span style="font-weight: bold;">Tim at Simporter</span> </p>
+                    <p>tim@simporter.com</p>
+                    <p></p>
+                </div><i id="FLenEfPo9aJ5TeKzWXk8dnNW6i7t4Oy8" class="fa fa-lock widget widget-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div id="L2vI4Qp1MScAn53V8k3SbWOOfXgQ408H" class="widget widget-section">
+        <div class="row">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="sendEmailModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Form has been sent</p>
+        </div>
+        <div class="modal-footer">
+            <div>
+              <button type="button" class="center-block" data-dismiss="modal">OK</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="errorEmailModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Error with sending form</p>
+        </div>
+        <div class="modal-footer">
+            <div>
+              <button type="button" class="center-block" data-dismiss="modal">OK</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/jquery.min.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/landend.bootstrap.min.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/bootbox.min.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/landing.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/landend.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/jquery.form.min.js.Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/landend.js(1).Без названия"></script>
+    <script type="text/javascript" src="./f5cad4y6.dotests.com_files/validation.js.Без названия"></script>
+    <script>
+        $(function() {
+            $("body").append('<img src="https://analytics.landingi.com/track/385011" alt="" style="display:none;">');
+        });
+    </script>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam.nr-data.net",
+            "licenseKey": "f1e66e60b0",
+            "applicationID": "28114708",
+            "transactionName": "MVNVNRYCV0ZZVRZaDggZdgIQClZbF18MVwQeGV4PAAZB",
+            "queueTime": 0,
+            "applicationTime": 411,
+            "atts": "HRRWQ14YREg=",
+            "errorBeacon": "bam.nr-data.net",
+            "agent": ""
+        }
+    </script>
+    <img src="./f5cad4y6.dotests.com_files/385011" alt="" style="display:none;">
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init("user_uc6wnW2z29UHYrhdoHr0S");
+   })();
+</script>
+    <script type="text/javascript">
+    function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+$("#rQTX9i39EtgStFb9QWPgm11Cucy3TFTT").submit(function(e) {
+    e.preventDefault();
+});
+
+$('#sendEmailModal').on('hidden.bs.modal', function () {
+    document.location.reload();
+})
+
+$('#errorEmailModal').on('hidden.bs.modal', function () {
+    document.location.reload();
+})
+
+        function sendEmail(){
+            debugger;
+            var nameFromForm = $("#Vv2anCkyvUtG9sG6NtCU0Gd28I4VGVxI").val();
+            var emailFromForm = $("#I3t0V2J7N4OHWSXATv0E6fVfTfN0DAgg").val();
+            if(!nameFromForm || !emailFromForm){
+                //alert("not validated!");
+                return;
+            }
+            if(!validateEmail(emailFromForm)){
+                //alert("wrong email");
+                return;
+            }
+            var service_id = 'gmail';
+var template_id = 'simcasttemplate';
+var template_params = {
+from_email: emailFromForm,
+from_name: nameFromForm
+}
+emailjs.send(service_id,template_id,template_params).then(
+  function(response) {
+    console.log("SUCCESS", response);
+    //alert("Data has been sent");
+    $("#sendEmailModal").modal();
+    //document.location.reload();
+  }, 
+  function(error) {
+    console.log("FAILED", error);
+      //  alert("Error!");
+    $("#errorEmailModal").modal();
+    //document.location.reload();
+  }
+);
+        }
+    </script>
+
+    </body>
+
+</html>
